@@ -1,40 +1,46 @@
-# 🌟 Núcleo Colectivo - Sitio Web
+# 🌐 Núcleo Colectivo - Sitio Web Responsive
 
-Bienvenido al repositorio del sitio web oficial de **Núcleo Colectivo**, un espacio para la creación, colaboración y transformación social en Medellín.
+Este repositorio contiene la versión optimizada para dispositivos móviles del sitio web de **Núcleo Colectivo**.
 
-## 🔗 Sitio en Vivo
+## ✅ Características
 
-Una vez activado GitHub Pages, tu sitio estará disponible en:
+- Diseño adaptado para móviles y tabletas.
+- Uso de Tailwind CSS para estilos modernos y responsivos.
+- Estructura ligera, ideal para publicación en GitHub Pages.
+
+## 📁 Estructura
+
+```
+├── index.html           # Página principal
+├── favicon.ico          # Ícono del navegador
+└── IMG/                 # Imágenes utilizadas
+    ├── LOGO2.png
+    ├── URL_DE_IMAGEN_NOSOTROS.png
+    └── ... otras imágenes
+```
+
+## 🚀 Publicación con GitHub Pages
+
+1. Sube este contenido a tu repositorio en GitHub.
+2. Ve a **Settings > Pages**.
+3. En **Source**, selecciona la rama `main` y carpeta `/root`.
+4. Guarda y visita el enlace generado como:
 
 ```
 https://nucleocolectivo.github.io/WEB
 ```
 
-## 📁 Estructura del Proyecto
+## 📱 Responsive Ready
 
-```
-├── index.html           # Página principal del sitio
-├── favicon.ico          # Ícono de pestaña
-└── IMG/                 # Carpeta de imágenes
-    ├── LOGO2.png
-    ├── LOGO3.png
-    ├── taller1.png
-    └── ... (y más imágenes usadas en el sitio)
-```
+Esta versión incluye mejoras en:
 
-## 🚀 Publicar con GitHub Pages
+- Tamaño de texto adaptable (`text-xl sm:text-3xl`)
+- Imágenes escalables (`w-full max-w-xs sm:max-w-md`)
+- Contenedores y márgenes para pantallas pequeñas
 
-1. Ve a tu repositorio en GitHub.
-2. Haz clic en **Settings** > **Pages**.
-3. En la sección **Source**, selecciona:
-   - Branch: `main`
-   - Folder: `/root`
-4. Haz clic en **Save**.
-5. Espera unos segundos y tu sitio estará en línea.
+## ✨ Créditos
 
-## ❤️ Créditos
+Proyecto desarrollado por **Manuel Palacio** para **Núcleo Colectivo**, con el apoyo de **CENDI, ITM y Sapiencia**.
 
-Este proyecto hace parte del proceso educativo de [CENDI + ITM + Sapiencia] e iniciativa cultural **Núcleo Colectivo**.
-
-¡Gracias por apoyar la creación colaborativa!
+---
 
