@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -13,19 +12,20 @@
   body {
     font-family: "Montserrat", sans-serif;
     background-image: url(IMG/37.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .color-title {
     color: white;
   }
 
-  /* Fondo y estilo de la galería */
   .galeria {
     background: linear-gradient(to right, #430089, #82ffa1);
     border-radius: 1rem;
   }
 
-  /* Estilo de carrusel de imágenes cuadradas */
   #carousel > div {
     width: calc(100% / 3);
     aspect-ratio: 1 / 1;
@@ -42,20 +42,21 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
-  /* ==== ESTILOS DE TALLERES ==== */
-
-  /* Aumenta espacio entre texto y botón */
-  .card-taller p:last-of-type {
-    margin-bottom: 2rem; /* Más separación */
+  @media (max-width: 768px) {
+    #carousel > div {
+      width: 100%;
+    }
   }
 
-  /* Botones con margen arriba */
+  .card-taller p:last-of-type {
+    margin-bottom: 2rem;
+  }
+
   .card-taller a {
     margin-top: 1rem;
     display: inline-block;
   }
 
-  /* Imágenes cuadradas responsivas en talleres */
   .card-taller .img-wrapper {
     aspect-ratio: 1 / 1;
     width: 100%;
@@ -69,7 +70,7 @@
     height: 100%;
     object-fit: cover;
   }
-</style>
+  </style>
 </head>
 
 <body class="bg-gray-100 text-black">
@@ -639,3 +640,31 @@
     }
   }
 </script>
+
+<!-- CONTENIDO COMPLETO DE TU PÁGINA AQUI -->
+
+  <!-- Chatbot de voz ElevenLabs -->
+  <section class="fixed bottom-4 right-4 z-50">
+    <elevenlabs-convai agent-id="agent_01jvahqbrgff9tky3wf1brsssp"></elevenlabs-convai>
+    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+  </section>
+
+  <!-- Script de carrusel corregido -->
+  <script>
+    const carousel2 = document.getElementById('carousel-2');
+    const visibles2 = 3;
+    let currentIndex2 = 0;
+    const total2 = carousel2 ? carousel2.children.length : 0;
+
+    function moverCarrusel2(direccion) {
+      currentIndex2 += direccion;
+      if (currentIndex2 < 0) currentIndex2 = total2 - visibles2;
+      if (currentIndex2 > total2 - visibles2) currentIndex2 = 0;
+      const porcentaje = -(100 / visibles2) * currentIndex2;
+      if (carousel2) carousel2.style.transform = `translateX(${porcentaje}%)`;
+    }
+
+    setInterval(() => moverCarrusel2(1), 6000);
+  </script>
+
+
