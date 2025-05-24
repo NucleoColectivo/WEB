@@ -1,0 +1,67 @@
+{
+  "recursos": [
+    {
+      "titulo": "RunwayML",
+      "descripcion": "Plataforma de herramientas de inteligencia artificial para creativos, con modelos gratuitos.",
+      "url": "https://runwayml.com",
+      "categoria": "Inteligencia Artificial",
+      "imagen": "https://runwayml.com/favicon.ico"
+    },
+    {
+      "titulo": "Google Teachable Machine",
+      "descripcion": "Entrena modelos de IA fácilmente sin código, ideal para proyectos creativos y educativos.",
+      "url": "https://teachablemachine.withgoogle.com",
+      "categoria": "Inteligencia Artificial",
+      "imagen": "https://teachablemachine.withgoogle.com/favicon.ico"
+    },
+    {
+      "titulo": "OpenProcessing",
+      "descripcion": "Comunidad y editor en línea para proyectos creativos en Processing (código abierto).",
+      "url": "https://www.openprocessing.org",
+      "categoria": "Processing y Código Abierto",
+      "imagen": "https://www.openprocessing.org/favicon.ico"
+    },
+    {
+      "titulo": "HuggingFace Spaces",
+      "descripcion": "Modelos y demos de inteligencia artificial listos para usar, muchos son gratuitos.",
+      "url": "https://huggingface.co/spaces",
+      "categoria": "Inteligencia Artificial",
+      "imagen": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg"
+    },
+    {
+      "titulo": "Artbreeder",
+      "descripcion": "Crea arte colaborativo con IA. Genética visual aplicada a retratos, paisajes, y más.",
+      "url": "https://www.artbreeder.com",
+      "categoria": "Inteligencia Artificial",
+      "imagen": "https://www.artbreeder.com/favicon.ico"
+    },
+    {
+      "titulo": "Wikimedia Commons",
+      "descripcion": "Millones de imágenes, sonidos y videos de dominio público o con licencias libres.",
+      "url": "https://commons.wikimedia.org",
+      "categoria": "Medios Audiovisuales y Cultura Visual",
+      "imagen": "https://commons.wikimedia.org/favicon.ico"
+    },
+    {
+      "titulo": "Biblioteca Digital Mundial (UNESCO)",
+      "descripcion": "Acceso gratuito a mapas, textos, fotos, grabaciones y películas de todo el mundo.",
+      "url": "https://www.wdl.org/es/",
+      "categoria": "Bibliotecas Digitales Generales",
+      "imagen": "https://www.wdl.org/static/img/favicon.ico"
+    },
+    {
+      "titulo": "Museo de Arte Moderno de Medellín (MAMM)",
+      "descripcion": "Recursos visuales, exposiciones digitales y archivo audiovisual.",
+      "url": "https://www.elmamm.org",
+      "categoria": "Arte y Cultura (Colombia)",
+      "imagen": "https://www.elmamm.org/favicon.ico"
+    },
+    {
+      "titulo": "Banco de la República - Biblioteca Virtual",
+      "descripcion": "Recursos en historia del arte, patrimonio y cultura colombiana.",
+      "url": "https://www.banrepcultural.org/biblioteca-virtual",
+      "categoria": "Arte y Cultura (Colombia)",
+      "imagen": "https://www.banrepcultural.org/themes/custom/bootstrap_banrep/favicon.ico"
+    }
+  ]
+}
