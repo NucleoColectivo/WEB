@@ -78,22 +78,71 @@
 </html>
 
 
-  <!-- Header -->
-  <header class="bg-[#F8C300] py-4 px-6 flex justify-between items-center shadow-lg sticky top-0 z-10 w-full">
-
-  <img src="IMG/LOGO3.png" alt="Logo de Núcleo Colectivo" class="h-11" />
-  <nav>
-    <ul class="flex space-x-6 text-lg font-medium">
-      <li><a href="#inicio" class="hover:text-gray-700">Inicio</a></li>
-      <li><a href="#nosotros" class="hover:text-gray-700">Nosotros</a></li>
-      <li><a href="#actividades" class="hover:text-gray-700">Actividades</a></li>
-      <li><a href="#proyectos" class="hover:text-gray-700">Proyectos</a></li>
-      <li><a href="#noticias" class="hover:text-gray-700">Noticias</a></li>
-      <li><a href="#contacto" class="hover:text-gray-700">Contacto</a></li>
-      <li><a href="biblioteca.html" target="_blank" class="hover:text-gray-700">Biblioteca</a></li>
+<!-- Header con menú responsive y animación -->
+<header class="bg-[#F8C300] py-4 px-6 shadow-lg sticky top-0 z-50 w-full">
+  <div class="flex justify-between items-center">
+    <img src="IMG/LOGO3.png" alt="Logo de Núcleo Colectivo" class="h-11" />
+    <button id="menu-toggle" class="md:hidden text-black focus:outline-none" aria-label="Abrir menú">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <nav id="menu" class="mt-4 md:mt-0 hidden md:flex md:items-center md:justify-center transition-all duration-500 ease-in-out">
+    <ul class="flex flex-col md:flex-row md:space-x-6 text-lg font-medium text-black">
+      <li><a href="#inicio" class="block py-2 hover:text-gray-700">Inicio</a></li>
+      <li><a href="#nosotros" class="block py-2 hover:text-gray-700">Nosotros</a></li>
+      <li><a href="#actividades" class="block py-2 hover:text-gray-700">Actividades</a></li>
+      <li><a href="#proyectos" class="block py-2 hover:text-gray-700">Proyectos</a></li>
+      <li><a href="#noticias" class="block py-2 hover:text-gray-700">Noticias</a></li>
+      <li><a href="#contacto" class="block py-2 hover:text-gray-700">Contacto</a></li>
+      <li><a href="biblioteca.html" target="_blank" class="block py-2 hover:text-gray-700">Biblioteca</a></li>
     </ul>
   </nav>
 </header>
+
+<!-- Script para toggle y animación del menú -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+
+  menuToggle.addEventListener("click", () => {
+    if (menu.classList.contains("hidden")) {
+      menu.classList.remove("hidden");
+      menu.style.maxHeight = menu.scrollHeight + "px";
+    } else {
+      menu.style.maxHeight = "0";
+      setTimeout(() => menu.classList.add("hidden"), 500); // tiempo igual al duration
+    }
+  });
+
+  // Asegurar que al redimensionar en desktop se muestre el menú correctamente
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+      menu.classList.remove("hidden");
+      menu.style.maxHeight = null;
+    } else {
+      menu.classList.add("hidden");
+      menu.style.maxHeight = "0";
+    }
+  });
+</script>
+
+<style>
+  #menu {
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  @media (min-width: 768px) {
+    #menu {
+      max-height: none !important;
+      overflow: visible !important;
+    }
+  }
+</style>
+
 
 
 
@@ -762,3 +811,5 @@
     <a href="mailto:contacto@nucleocolectivo.org" style="color: #FFD700;">Contacto</a>
   </div>
 </footer>
+
+
