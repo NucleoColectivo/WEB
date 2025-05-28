@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caja de Herramientas Creativas | Núcleo Colectivo</title>
+  <link rel="stylesheet" href="estilos.css" />
+  
+  
+  
+  
+  <style>
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #fafafa;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #5a189a;
+      font-size: 2rem;
+    }
+
+    .toolkit-section {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .tarjetas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .tarjeta {
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-4px);
+    }
+
+    .tarjeta img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .botones {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .botones a,
+    .botones button {
+      background: none;
+      border: 1px solid #7b2cbf;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      color: #7b2cbf;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .botones a:hover,
+    .botones button:hover {
+      background: #7b2cbf;
+      color: #fff;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .cerrar {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="herramientas" class="toolkit-section">
+    <h2>Caja de Herramientas Creativas 🧰</h2>
+    <div class="tarjetas-grid" id="contenedor-recursos"></div>
+
+    <!-- Modal -->
+    <div id="modal-tutorial" class="modal">
+      <div class="modal-content">
+        <span class="cerrar">&times;</span>
+        <h3 id="titulo-modal"></h3>
+        <p id="contenido-modal"></p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const recursos = [
+      {
+        titulo: "Canva",
+        descripcion: "Diseña contenidos visuales fácilmente.",
+        imagen: "IMG/canva.png",
+        enlace: "https://www.canva.com",
+        tutorial: "Crea una portada de evento en 5 minutos con plantillas de Canva. Selecciona una plantilla, cambia el texto y descarga tu diseño en PNG."
+      },
+      {
+        titulo: "ElevenLabs",
+        descripcion: "Genera voz realista desde texto.",
+        imagen: "IMG/elevenlabs.png",
+        enlace: "https://www.elevenlabs.io",
+        tutorial: "Regístrate, escribe un texto, elige una voz y descarga tu narración en formato MP3. Úsalo para podcast o video."
+      },
+      {
+        titulo: "ChatGPT",
+        descripcion: "Crea textos con IA.",
+        imagen: "IMG/chatgpt.png",
+        enlace: "https://chat.openai.com",
+        tutorial: "Inicia sesión, escribe una idea o pregunta creativa, y ajusta tus resultados según el tono y estilo que quieras."
+      },
+      {
+        titulo: "Processing",
+        descripcion: "Programa arte visual interactivo.",
+        imagen: "IMG/processing.png",
+        enlace: "https://processing.org",
+        tutorial: "Descarga Processing, abre un nuevo sketch, escribe: `ellipse(50, 50, 80, 80);` y ejecuta. ¡Dibujo generado por código!"
+      }
+    ];
+
+    const contenedor = document.getElementById("contenedor-recursos");
+    const modal = document.getElementById("modal-tutorial");
+    const tituloModal = document.getElementById("titulo-modal");
+    const contenidoModal = document.getElementById("contenido-modal");
+    const cerrar = document.querySelector(".cerrar");
+
+    recursos.forEach((recurso, index) => {
+      contenedor.innerHTML += `
+        <div class="tarjeta">
+          <img src="${recurso.imagen}" alt="${recurso.titulo}" />
+          <h3>${recurso.titulo}</h3>
+          <p>${recurso.descripcion}</p>
+          <div class="botones">
+            <a href="${recurso.enlace}" target="_blank">Ir al recurso ↗</a>
+            <button onclick="abrirTutorial(${index})">Ver tutorial</button>
+          </div>
+        </div>
+      `;
+    });
+
+    function abrirTutorial(index) {
+      tituloModal.innerText = recursos[index].titulo;
+      contenidoModal.innerText = recursos[index].tutorial;
+      modal.style.display = "block";
+    }
+
+    cerrar.onclick = () => modal.style.display = "none";
+    window.onclick = (event) => {
+      if (event.target === modal) modal.style.display = "none";
+    };
+  </script>
+
+</body>
+</html>

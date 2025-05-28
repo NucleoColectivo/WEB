@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería de Artistas | Núcleo Colectivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    header {
+      background-color: #6A0DAD;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .filter-section {
+      text-align: center;
+      padding: 1rem;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .card p {
+      margin: 0.25rem 0;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .pagination {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .pagination button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #6A0DAD;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Galería de Artistas</h1>
+    <p>Explora las voces creativas de Núcleo Colectivo</p>
+  </header>
+
+  <div class="filter-section">
+    <label for="category">Filtrar por categoría: </label>
+    <select id="category">
+      <option value="Todos">Todos</option>
+    </select>
+  </div>
+
+  <section class="gallery" id="gallery">
+    <!-- Artistas aparecerán aquí -->
+  </section>
+
+  <div class="pagination">
+    <button id="prev">Anterior</button>
+    <button id="next">Siguiente</button>
+  </div>
+
+  <iframe src="https://airtable.com/appbDSsuSHBXiXdwl/pagKsUbZDHkVNmIkY" frameborder="0"></iframe>
+
+  <script>
+    const apiKey = 'patJ0ioEGpnwjRf8y.3a5d63171d84010ce7a9609ecb11c1ff7d7e2e0f85edb4a9b33ab68b8702ce09';
+    const baseId = 'app1PfKHaKRTdK3x0';
+    const tableName = 'Perfiles';
+    const pageSize = 9;
+
+    let allRecords = [];
+    let filtered = [];
+    let currentPage = 0;
+
+    async function fetchRecords() {
+      const url = `https://api.airtable.com/v0/${baseId}/${tableName}?pageSize=100`;
+      const res = await fetch(url, {
+        headers: { Authorization: `Bearer ${apiKey}` },
+      });
+      const data = await res.json();
+      allRecords = data.records;
+      fillCategories(allRecords);
+      filtered = allRecords;
+      renderGallery();
+    }
+
+    function fillCategories(records) {
+      const categorySelect = document.getElementById('category');
+      const categories = [...new Set(records.map(r => r.fields.Categoría).filter(Boolean))];
+      categories.forEach(c => {
+        const option = document.createElement('option');
+        option.value = c;
+        option.textContent = c;
+        categorySelect.appendChild(option);
+      });
+    }
+
+    function renderGallery() {
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+      const start = currentPage * pageSize;
+      const end = start + pageSize;
+      const pageItems = filtered.slice(start, end);
+
+      pageItems.forEach(record => {
+        const fields = record.fields;
+        const card = document.createElement('div');
+        card.className = 'card';
+        const img = fields.Foto && fields.Foto[0] ? fields.Foto[0].url : 'https://via.placeholder.com/100';
+
+        card.innerHTML = `
+          <img src="${img}" alt="${fields.Nombre}" />
+          <h3>${fields.Nombre}</h3>
+          <p><strong>${fields.Categoría || ''}</strong></p>
+          <p>${fields.Descripción || ''}</p>
+          ${fields.Instagram ? `<a href="${fields.Instagram}" class="contact-button" target="_blank">Contactar</a>` : ''}
+        `;
+        gallery.appendChild(card);
+      });
+    }
+
+    document.getElementById('category').addEventListener('change', (e) => {
+      const cat = e.target.value;
+      currentPage = 0;
+      filtered = cat === 'Todos' ? allRecords : allRecords.filter(r => r.fields.Categoría === cat);
+      renderGallery();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+      if (currentPage > 0) {
+        currentPage--;
+        renderGallery();
+      }
+    });
+
+    document.getElementById('next').addEventListener('click', () => {
+      if ((currentPage + 1) * pageSize < filtered.length) {
+        currentPage++;
+        renderGallery();
+      }
+    });
+
+    fetchRecords();
+  </script>
+</body>
+</html>

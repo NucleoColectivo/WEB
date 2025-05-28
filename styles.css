@@ -1,0 +1,65 @@
+.toolkit-section {
+  padding: 2rem;
+  background-color: #fff;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.toolkit-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.tarjeta {
+  background-color: #f9f9f9;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.tarjeta h3 {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.tarjeta a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #7b2cbf; /* Violeta Núcleo */
+  border: 1px solid #7b2cbf;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.tarjeta a:hover {
+  background-color: #7b2cbf;
+  color: white;
+}
