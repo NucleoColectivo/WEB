@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donación de Recursos - Núcleo Colectivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #5f27cd, #341f97);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    section.category {
+      margin: 2rem 1rem 3rem;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+
+    section.category h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #5f27cd;
+      border-bottom: 2px solid #5f27cd;
+      padding-bottom: 0.25rem;
+      font-size: 1.3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .card {
+      border: 2px solid #eee;
+      border-radius: 16px;
+      padding: 0.75rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.7rem;
+      min-height: 170px;
+      max-height: 170px;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      max-width: 40px;
+      height: auto;
+      margin-bottom: 0.4rem;
+    }
+
+    .card h3 {
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+      color: #222;
+    }
+
+    .card p {
+      font-size: 0.65rem;
+      color: #666;
+      flex-grow: 1;
+    }
+
+    .card .price {
+      font-weight: bold;
+      color: #5f27cd;
+      margin: 0.2rem 0;
+    }
+
+    .card button {
+      margin-top: 0.3rem;
+      background-color: #feca57;
+      border: none;
+      color: #000;
+      padding: 0.3rem 0.7rem;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 0.65rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #ffd54f;
+    }
+
+    /* Categorías con colores de fondo suaves */
+    section.hardware {
+      background-color: #f0e6ff;
+    }
+
+    section.software {
+      background-color: #e6f7ff;
+    }
+
+    section.servicios {
+      background-color: #fff7e6;
+    }
+
+    section.papeleria {
+      background-color: #e6fff1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Donación de Recursos para Núcleo Colectivo</h1>
+</header>
+
+<!-- Hardware -->
+<section class="category hardware" id="hardware">
+  <h2>Hardware (Equipos y Accesorios)</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="img/gimball.webp" alt="Monitor Externo">
+      <h3>Monitor Externo</h3>
+      <p>Hardware audiovisual para mejor visualización</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Monitor Externo" onclick="donarRecurso('Monitor Externo')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Wacom-Tablet.svg" alt="Tablet gráfica">
+      <h3>Tablet Gráfica (Wacom / XP-Pen)</h3>
+      <p>Herramienta para diseño digital y dibujo</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Tablet Gráfica" onclick="donarRecurso('Tablet Gráfica (Wacom / XP-Pen)')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Gimbal_icon.svg" alt="Gimbal estabilizador">
+      <h3>Gimbal Estabilizador</h3>
+      <p>Accesorio para grabación audiovisual estable</p>
+      <div class="price">Accesorio</div>
+      <button aria-label="Donar Gimbal Estabilizador" onclick="donarRecurso('Gimbal Estabilizador')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Light_icon.svg" alt="Luces LED portátiles">
+      <h3>Luces LED Portátiles con Trípode</h3>
+      <p>Iluminación para grabaciones y fotografías</p>
+      <div class="price">Accesorio</div>
+      <button aria-label="Donar Luces LED Portátiles" onclick="donarRecurso('Luces LED Portátiles con Trípode')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Macbook_Pro_Icon.svg" alt="MacBook Pro">
+      <h3>MacBook Pro</h3>
+      <p>Computadora portátil potente para edición y creación</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar MacBook Pro" onclick="donarRecurso('MacBook Pro')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Headphone_icon.svg" alt="Audífonos con micrófono">
+      <h3>Audífonos con Micrófono</h3>
+      <p>Audio de calidad para grabación y comunicación</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Audífonos con Micrófono" onclick="donarRecurso('Audífonos con Micrófono')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Printer_icon.svg" alt="Impresora multifuncional">
+      <h3>Impresora Multifuncional</h3>
+      <p>Impresión y escaneo para oficina y proyectos</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Impresora Multifuncional" onclick="donarRecurso('Impresora Multifuncional')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Webcam_icon.svg" alt="Cámara web externa">
+      <h3>Cámara Web Externa</h3>
+      <p>Mejora la calidad de video en transmisiones y reuniones</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Cámara Web Externa" onclick="donarRecurso('Cámara Web Externa')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Microphone_icon.svg" alt="Micrófono profesional">
+      <h3>Micrófono Profesional</h3>
+      <p>Audio profesional para grabaciones y transmisiones</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Micrófono Profesional" onclick="donarRecurso('Micrófono Profesional')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Apple_Pencil_icon.svg" alt="iPad + Apple Pencil">
+      <h3>iPad + Apple Pencil</h3>
+      <p>Diseño y dibujo con alta precisión y portabilidad</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar iPad + Apple Pencil" onclick="donarRecurso('iPad + Apple Pencil')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/External_Hard_Drive_icon.svg" alt="Disco duro externo / SSD">
+      <h3>Disco Duro Externo / SSD</h3>
+      <p>Almacenamiento portátil para proyectos y backups</p>
+      <div class="price">Equipo</div>
+      <button aria-label="Donar Disco Duro Externo / SSD" onclick="donarRecurso('Disco Duro Externo / SSD')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Router_icon.svg" alt="Router / Internet estable">
+      <h3>Router / Internet Estable</h3>
+      <p>Conectividad confiable para trabajo y transmisión</p>
+      <div class="price">Equipo / Servicio ISP</div>
+      <button aria-label="Donar Router / Internet Estable" onclick="donarRecurso('Router / Internet Estable')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Tripod_icon.svg" alt="Trípode / Soporte">
+      <h3>Trípode / Soporte</h3>
+      <p>Soporte para cámaras y luces en grabaciones</p>
+      <div class="price">Accesorio</div>
+      <button aria-label="Donar Trípode / Soporte" onclick="donarRecurso('Trípode / Soporte')">Donar ahora</button>
+    </div>
+  </div>
+</section>
+
+<!-- Software y Apps -->
+<section class="category software" id="software">
+  <h2>Software y Aplicaciones</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Plus">
+      <h3>ChatGPT Plus</h3>
+      <p>IA avanzada para creación y asistencia</p>
+      <div class="price">$20 / mes</div>
+      <button aria-label="Donar ChatGPT Plus" onclick="donarRecurso('ChatGPT Plus')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://seeklogo.com/images/C/canva-logo-1BB07BC2A4-seeklogo.com.png" alt="Canva Pro">
+      <h3>Canva Pro</h3>
+      <p>Herramientas premium de diseño</p>
+      <div class="price">$12 / mes</div>
+      <button aria-label="Donar Canva Pro" onclick="donarRecurso('Canva Pro')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://app.elevenlabs.io/favicon.ico" alt="ElevenLabs">
+      <h3>ElevenLabs</h3>
+      <p>Voces AI para narración y proyectos</p>
+      <div class="price">$10 / mes</div>
+      <button aria-label="Donar ElevenLabs" onclick="donarRecurso('ElevenLabs')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Adobe_Photoshop_CC_icon.svg" alt="Photoshop CC">
+      <h3>Adobe Photoshop CC</h3>
+      <p>Edición avanzada de imágenes</p>
+      <div class="price">$20 / mes</div>
+      <button aria-label="Donar Adobe Photoshop CC" onclick="donarRecurso('Adobe Photoshop CC')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Adobe_Illustrator_CC_icon.svg" alt="Adobe Illustrator">
+      <h3>Adobe Illustrator</h3>
+      <p>Diseño vectorial profesional</p>
+      <div class="price">$20 / mes</div>
+      <button aria-label="Donar Adobe Illustrator" onclick="donarRecurso('Adobe Illustrator')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Blender_logo_no_text.svg" alt="Blender 3D">
+      <h3>Blender 3D</h3>
+      <p>Modelado y animación 3D</p>
+      <div class="price">Gratis</div>
+      <button aria-label="Donar Blender 3D" onclick="donarRecurso('Blender 3D')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Figma-logo.svg" alt="Figma">
+      <h3>Figma</h3>
+      <p>Diseño colaborativo UI/UX</p>
+      <div class="price">Gratis / Pro</div>
+      <button aria-label="Donar Figma" onclick="donarRecurso('Figma')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Microsoft_Office_Logo_%282019-present%29.svg" alt="Microsoft 365">
+      <h3>Microsoft 365</h3>
+      <p>Suite de productividad</p>
+      <div class="price">$12 / mes</div>
+      <button aria-label="Donar Microsoft 365" onclick="donarRecurso('Microsoft 365')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Jupyter_logo.svg" alt="Jupyter Notebook">
+      <h3>Jupyter Notebook</h3>
+      <p>Herramienta para programación y análisis</p>
+      <div class="price">Gratis</div>
+      <button aria-label="Donar Jupyter Notebook" onclick="donarRecurso('Jupyter Notebook')">Donar ahora</button>
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section class="category servicios" id="servicios">
+  <h2>Servicios y Suscripciones</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Stripe_Logo%2C_revised_2016.svg" alt="Stripe">
+      <h3>Stripe (Pago y Donaciones)</h3>
+      <p>Procesamiento de pagos seguro</p>
+      <div class="price">Servicio</div>
+      <button aria-label="Donar Stripe" onclick="donarRecurso('Stripe (Pago y Donaciones)')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Amazon_Web_Services_Logo.svg" alt="AWS">
+      <h3>Amazon Web Services</h3>
+      <p>Infraestructura cloud para proyectos</p>
+      <div class="price">Servicio</div>
+      <button aria-label="Donar Amazon Web Services" onclick="donarRecurso('Amazon Web Services')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Google_Cloud_Logo.svg" alt="Google Cloud">
+      <h3>Google Cloud Platform</h3>
+      <p>Servicios en la nube y computación</p>
+      <div class="price">Servicio</div>
+      <button aria-label="Donar Google Cloud Platform" onclick="donarRecurso('Google Cloud Platform')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Heroku_logo.svg" alt="Heroku">
+      <h3>Heroku</h3>
+      <p>Plataforma para despliegue web</p>
+      <div class="price">Servicio</div>
+      <button aria-label="Donar Heroku" onclick="donarRecurso('Heroku')">Donar ahora</button>
+    </div>
+  </div>
+</section>
+
+<!-- Papelería -->
+<section class="category papeleria" id="papeleria">
+  <h2>Papelería y Materiales</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Pen_icon.svg" alt="Lápices y colores">
+      <h3>Lápices, Colores y Marcadores</h3>
+      <p>Material básico para dibujo y bocetos</p>
+      <div class="price">Material</div>
+      <button aria-label="Donar Lápices, Colores y Marcadores" onclick="donarRecurso('Lápices, Colores y Marcadores')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Notebook_icon.svg" alt="Cuadernos y libretas">
+      <h3>Cuadernos y Libretas</h3>
+      <p>Apuntes, guías y bocetos</p>
+      <div class="price">Material</div>
+      <button aria-label="Donar Cuadernos y Libretas" onclick="donarRecurso('Cuadernos y Libretas')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Scissors_icon.svg" alt="Tijeras y pegamento">
+      <h3>Tijeras y Pegamento</h3>
+      <p>Material para manualidades y collages</p>
+      <div class="price">Material</div>
+      <button aria-label="Donar Tijeras y Pegamento" onclick="donarRecurso('Tijeras y Pegamento')">Donar ahora</button>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Paint_icon.svg" alt="Pinturas y pinceles">
+      <h3>Pinturas y Pinceles</h3>
+      <p>Para pintura artística y creativa</p>
+      <div class="price">Material</div>
+      <button aria-label="Donar Pinturas y Pinceles" onclick="donarRecurso('Pinturas y Pinceles')">Donar ahora</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Núcleo Colectivo. Todos los derechos reservados.
+</footer>
+
+<script>
+  function donarRecurso(nombre) {
+    // Mensaje en español. Si deseas versión bilingüe, puedes ajustarlo:
+    const mensaje = `Hola, me interesa donar: ${nombre} para Núcleo Colectivo.`;
+    // Reemplaza el número con tu número de WhatsApp:
+    window.open(`https://wa.me/573017089007?text=${encodeURIComponent(mensaje)}`, '_blank');
+  }
+</script>
+
+</body>
+</html>

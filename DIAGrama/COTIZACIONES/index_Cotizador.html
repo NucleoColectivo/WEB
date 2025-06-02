@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cotizador Digital • Núcleo Colectivo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <!-- CONTENEDOR GENERAL -->
+  <div class="page">
+
+    <!-- ENCABEZADO MORADO -->
+    <header class="header-bar">
+      
+      <div class="acciones">
+        <button onclick="cambiarIdioma()">🌐 <span class="es">Español</span><span class="en">English</span></button>
+        <button onclick="descargarPDF()">📥 <span class="es">Descargar PDF</span><span class="en">Download PDF</span></button>
+        <a href="https://wa.me/573017089007" target="_blank" class="whatsapp">📲 <span class="es">WhatsApp</span><span class="en">WhatsApp</span></a>
+      </div>
+    </header>
+
+    <!-- HERO CON TEXTO -->
+    <section class="hero">
+      <div class="hero-text">
+        
+        <h2 id="titulo">Núcleo Colectivo</h2>
+        
+        <h2> <span class="es">🚀 Cotizador de Servicios Digitales  🚀 </span><span class="en"> 🚀 Boost Your Digital Presence 🚀</span></h2>
+        <p>
+          <span class="es">Servicios Web, IA, Ilustración y Dirección creativa</span>
+          <span class="en">Web Services, AI, Illustration & more</span>
+        </p>
+        <div class="hero-buttons">
+          <button onclick="scrollToSection('individuales')">📋 <span class="es">Ver Servicios</span><span class="en">View Services</span></button>
+          <a href="https://wa.me/573017089007" target="_blank">📞 <span class="es">Contáctanos</span><span class="en">Contact Us</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENIDO (TABLAS, COTIZACIÓN) -->
+    <main id="contenido">
+      <!-- SECCIÓN: SERVICIOS INDIVIDUALES -->
+      <section id="individuales" class="familia">
+        <h2>🧩 <span class="en">Individual Services</span><span class="es">Servicios Individuales</span></h2>
+        <table>
+          <thead>
+            <tr>
+              <th><span class="es">Seleccionar</span><span class="en">Select</span></th>
+              <th>📝 <span class="es">Servicio</span><span class="en">Service</span></th>
+              <th>🧾 <span class="es">Descripción</span><span class="en">Description</span></th>
+              <th>💰 COP</th>
+              <th>💵 USD</th>
+              <th><span class="es">Cantidad</span><span class="en">Qty</span></th>
+              <th><span class="es">Subtotal</span><span class="en">Subtotal</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Landing básica</span><span class="en">Basic Landing</span></td>
+              <td><span class="es">HTML, hasta 4 secciones</span><span class="en">HTML, up to 4 sections</span></td>
+              <td><span class="precio" data-cop="450000" data-usd="112.5">450,000</span></td>
+              <td>112.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Landing personalizada</span><span class="en">Custom Landing</span></td>
+              <td><span class="es">6 secciones + branding</span><span class="en">6 sections + branding</span></td>
+              <td><span class="precio" data-cop="650000" data-usd="162.5">650,000</span></td>
+              <td>162.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Landing optimizada</span><span class="en">Optimized Landing</span></td>
+              <td><span class="es">SEO + animaciones</span><span class="en">SEO + animations</span></td>
+              <td><span class="precio" data-cop="850000" data-usd="212.5">850,000</span></td>
+              <td>212.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Imagen IA (unidad)</span><span class="en">AI Image (each)</span></td>
+              <td><span class="es">Ilustración generada con IA</span><span class="en">AI-generated illustration</span></td>
+              <td><span class="precio" data-cop="30000" data-usd="7.5">30,000</span></td>
+              <td>7.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Pack 5 Imágenes IA</span><span class="en">Pack of 5 AI Images</span></td>
+              <td><span class="es">Cinco ilustraciones contextuales</span><span class="en">Five contextual illustrations</span></td>
+              <td><span class="precio" data-cop="140000" data-usd="35">140,000</span></td>
+              <td>35</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Chatbot básico</span><span class="en">Basic Chatbot</span></td>
+              <td><span class="es">SimpleChat con saludo</span><span class="en">SimpleChat with greeting</span></td>
+              <td><span class="precio" data-cop="60000" data-usd="15">60,000</span></td>
+              <td>15</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Chatbot lógico</span><span class="en">Logic Chatbot</span></td>
+              <td><span class="es">Condicional, con FAQ</span><span class="en">Conditional, with FAQ</span></td>
+              <td><span class="precio" data-cop="110000" data-usd="27.5">110,000</span></td>
+              <td>27.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Key Visual (arte)</span><span class="en">Key Visual (art)</span></td>
+              <td><span class="es">Dirección de Arte mínima</span><span class="en">Minimal Art Direction</span></td>
+              <td><span class="precio" data-cop="450000" data-usd="112.5">450,000</span></td>
+              <td>112.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Dirección de Arte integral</span><span class="en">Full Art Direction</span></td>
+              <td><span class="es">3 piezas + asesoría</span><span class="en">3 pieces + consulting</span></td>
+              <td><span class="precio" data-cop="900000" data-usd="225">900,000</span></td>
+              <td>225</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">SEO básico</span><span class="en">Basic SEO</span></td>
+              <td><span class="es">Meta tags + velocidad</span><span class="en">Meta tags + speed</span></td>
+              <td><span class="precio" data-cop="100000" data-usd="25">100,000</span></td>
+              <td>25</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Formulario avanzado</span><span class="en">Advanced Form</span></td>
+              <td><span class="es">Validación + envío</span><span class="en">Validation + send</span></td>
+              <td><span class="precio" data-cop="60000" data-usd="15">60,000</span></td>
+              <td>15</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- PAQUETES COMPETITIVOS -->
+      <section class="familia">
+        <h2>📦 <span class="en">Service Packages</span><span class="es">Paquetes Completos</span></h2>
+        <table id="packages"> 
+          <thead>
+            <tr>
+              <th><span class="es">Seleccionar</span><span class="en">Select</span></th>
+              <th>🏷️ <span class="es">Paquete</span><span class="en">Package</span></th>
+              <th>📋 <span class="es">Descripción</span><span class="en">Description</span></th>
+              <th>💰 COP</th>
+              <th>💵 USD</th>
+              <th><span class="es">Cantidad</span><span class="en">Qty</span></th>
+              <th><span class="es">Subtotal</span><span class="en">Subtotal</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>⭐ <span class="es">Básico</span><span class="en">Basic</span></td>
+              <td>
+                <span class="es">
+                  Landing básica + 1 Imagen IA + Chatbot básico + Key Visual
+                </span>
+                <span class="en">
+                  Basic Landing + 1 AI Image + Basic Chatbot + Key Visual
+                </span>
+              </td>
+              <td><span class="precio" data-cop="841500" data-usd="210">841,500</span></td>
+              <td>210</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>🚀 <span class="es">Medio</span><span class="en">Medium</span></td>
+              <td>
+                <span class="es">
+                  Landing personalizada + 3 Imágenes IA + Chatbot lógico + Arte integral + Formulario avanzado
+                </span>
+                <span class="en">
+                  Custom Landing + 3 AI Images + Logic Chatbot + Full Art Direction + Advanced Form
+                </span>
+              </td>
+              <td><span class="precio" data-cop="1448000" data-usd="362">1,448,000</span></td>
+              <td>362</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>👑 <span class="es">Premium</span><span class="en">Premium</span></td>
+              <td>
+                <span class="es">
+                  Landing optimizada + 5 Imágenes IA + Chatbot con conexión + Arte avanzado + SEO + Formulario avanzado
+                </span>
+                <span class="en">
+                  Optimized Landing + 5 AI Images + Connected Chatbot + Advanced Art + SEO + Advanced Form
+                </span>
+              </td>
+              <td><span class="precio" data-cop="1627500" data-usd="407">1,627,500</span></td>
+              <td>407</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- EXTRAS OPCIONALES -->
+      <section class="familia">
+        <h2>✨ <span class="en">Optional Extras</span><span class="es">Extras Opcionales</span></h2>
+        <table>
+          <thead>
+            <tr>
+              <th><span class="es">Seleccionar</span><span class="en">Select</span></th>
+              <th>🔧 <span class="es">Extra</span><span class="en">Extra</span></th>
+              <th>📋 <span class="es">Descripción</span><span class="en">Description</span></th>
+              <th>💰 COP</th>
+              <th>💵 USD</th>
+              <th><span class="es">Cantidad</span><span class="en">Qty</span></th>
+              <th><span class="es">Subtotal</span><span class="en">Subtotal</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Imagen IA extra</span><span class="en">Extra AI Image</span></td>
+              <td><span class="es">Ilustración IA adicional</span><span class="en">Additional AI illustration</span></td>
+              <td><span class="precio" data-cop="30000" data-usd="7.5">30,000</span></td>
+              <td>7.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Hosting + Dominio anual</span><span class="en">Annual Hosting + Domain</span></td>
+              <td><span class="es">Alojamiento y dominio por 1 año</span><span class="en">1 year hosting & domain</span></td>
+              <td><span class="precio" data-cop="120000" data-usd="30">120,000</span></td>
+              <td>30</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Soporte mensual</span><span class="en">Monthly Support</span></td>
+              <td><span class="es">Soporte y actualizaciones</span><span class="en">Support & updates monthly</span></td>
+              <td><span class="precio" data-cop="80000" data-usd="20">80,000</span></td>
+              <td>20</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Logotipo</span><span class="en">Logo Design</span></td>
+              <td><span class="es">Vectorización + manual breve</span><span class="en">Vector + brief guide</span></td>
+              <td><span class="precio" data-cop="150000" data-usd="37.5">150,000</span></td>
+              <td>37.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Key Visual extra</span><span class="en">Extra Key Visual</span></td>
+              <td><span class="es">Pieza publicitaria adicional</span><span class="en">Additional ad piece</span></td>
+              <td><span class="precio" data-cop="450000" data-usd="112.5">450,000</span></td>
+              <td>112.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td><span class="es">Community Management</span><span class="en">Community Management</span></td>
+              <td><span class="es">10 publicaciones mensual</span><span class="en">10 posts monthly</span></td>
+              <td><span class="precio" data-cop="1200000" data-usd="300">1,200,000</span></td>
+              <td>300</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ILUSTRACIÓN Y DIRECCIÓN DE ARTE (INFO) -->
+      <section class="familia">
+        <h2>🎨 <span class="en">Illustration & Art Direction Info</span><span class="es">Info Ilustración y Dirección</span></h2>
+        <p>
+          <span class="es">
+            Rangos de precios según nivel:
+          </span>
+          <span class="en">
+            Price ranges by level:
+          </span>
+        </p>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th><span class="es">Nivel</span><span class="en">Level</span></th>
+              <th>IA (COP)</th>
+              <th><span class="es">Digital (COP)</span><span class="en">Digital (COP)</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Low Cost</td><td>30,000 – 50,000</td><td>60,000 – 90,000</td></tr>
+            <tr><td>Basic</td><td>60,000 – 90,000</td><td>100,000 – 150,000</td></tr>
+            <tr><td>Medium</td><td>120,000 – 180,000</td><td>180,000 – 250,000</td></tr>
+            <tr><td>Pro</td><td>200,000 – 280,000</td><td>280,000 – 400,000</td></tr>
+            <tr><td>Premium</td><td>300,000 – 500,000+</td><td>450,000 – 750,000+</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- TOTAL A PAGAR -->
+      <div class="total-box">
+        <span id="total-label"><span class="es">Total estimado:</span><span class="en">Estimated total:</span></span>
+        <span id="total-cop">$0</span> COP / <span id="total-usd">$0</span> USD
+      </div>
+      <div>
+        <button class="boton-pago" onclick="confirmarPago()">💳 <span class="es">Pagar ahora</span><span class="en">Pay now</span></button>
+      </div>
+
+      <!-- FORMULARIO DE CONTACTO -->
+      <section id="contacto" class="familia">
+        <h2>📩 <span class="en">Contact Us</span><span class="es">Contáctanos</span></h2>
+        <form onsubmit="enviarFormulario(event)">
+          <label for="nombre"><span class="es">Nombre</span><span class="en">Name</span>:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+
+          <label for="email"><span class="es">Correo</span><span class="en">Email</span>:</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+
+          <label for="mensaje"><span class="es">Mensaje</span><span class="en">Message</span>:</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu consulta aquí..." required></textarea>
+
+          <button type="submit" class="boton-pago">✉️ <span class="es">Enviar</span><span class="en">Send</span></button>
+        </form>
+      </section>
+    </main>
+
+    <!-- PIE DE PÁGINA MORADO -->
+    <footer>
+      <p>© 2025 Núcleo Colectivo – Medellín, Colombia</p>
+      <div>
+        <a href="https://www.instagram.com/nucleo_colectivo_art/" target="_blank">📸 Instagram</a>
+        <a href="mailto:nucleo.colectivo.art@gmail.com">✉️ nucleo.colectivo.art@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- html2pdf.js para generar PDF tamaño carta -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

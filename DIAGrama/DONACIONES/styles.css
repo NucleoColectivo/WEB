@@ -1,0 +1,230 @@
+/* =======================
+   NÚCLEO COLECTIVO v4
+   styles.css – Versión mejorada
+   ======================= */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #4c0299;
+  text-decoration: none;
+}
+
+/* NAVBAR */
+.nav-bar {
+  background: #4c0299;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-bar a {
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  transition: background 0.3s ease;
+}
+
+.nav-bar a:hover {
+  background: #6a3c8b;
+}
+
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+#menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#lang-toggle {
+  margin-left: auto;
+  background: white;
+  color: #471764;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#lang-toggle:hover {
+  background: #e0c8f0;
+}
+
+.cta-button {
+  background: #f8c000;
+  color: #222;
+  font-weight: bold;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e2b100;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  background: #f8c300;
+  color: #222;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.hero .autor {
+  font-size: 1rem;
+  color: #555;
+}
+
+.hero img {
+  width: 180px;
+  margin-top: 2rem;
+  max-width: 100%;
+  height: auto;
+}
+
+/* SECCIONES */
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border-bottom: 2px solid rgba(148, 106, 173, 0.21);
+  background: #f2f2f2;
+}
+
+.section h2 {
+  color: #5d2c7b;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.section ul {
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+.section ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.section ul li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #5d2c7b;
+}
+
+.section img {
+  display: block;
+  margin: 2rem auto 1rem;
+  width: 60%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* FOOTER */
+footer.section {
+  background: #f1f1f1;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding-bottom: 2rem;
+}
+
+/* ANIMACIONES */
+.step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  #menu-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #menu-items.show {
+    display: flex;
+  }
+
+  #menu-items a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section img {
+    width: 90%;
+  }
+}
+
+/* IMPRESIÓN */
+@media print {
+  nav, #menu-toggle, #lang-toggle, .cta-button {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .section {
+    page-break-inside: avoid;
+  }
+}

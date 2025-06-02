@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Núcleo Colectivo
+  </title>
+  <link href="styles.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest">
+  </script>
+  <style>
+   @media (max-width: 768px) {
+      #menu-toggle {
+        display: block;
+      }
+      #menu-items {
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+        width: 100%;
+      }
+      #menu-items.show {
+        max-height: 500px;
+      }
+      #menu-items a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    #menu-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+    #lang-toggle {
+      margin-left: auto;
+      background: white;
+      color: #641737;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    #lang-toggle:hover {
+      background: #e0c8f0;
+    }
+  </style>
+  <style>
+   @media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+  #menu-items {
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    width: 100%;
+  }
+  #menu-items.show {
+    max-height: 500px;
+  }
+  #menu-items a {
+    width: 100%;
+    text-align: center;
+  }
+}
+#menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+#lang-toggle {
+  margin-left: auto;
+  background: white;
+  color: #64172e;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#lang-toggle:hover {
+  background: #e0c8f0;
+}
+  </style>
+ </head>
+ 
+ 
+ <body>
+  <!-- CONTENEDOR GENERAL -->
+  <div class="page">
+
+    <!-- ENCABEZADO MORADO -->
+    <header class="header-bar">
+      
+      <div class="acciones">
+        <button onclick="cambiarIdioma()">🌐 <span class="es">Español</span><span class="en">English</span></button>
+        <button onclick="descargarPDF()">📥 <span class="es">Descargar PDF</span><span class="en">Download PDF</span></button>
+        <a href="https://wa.me/573017089007" target="_blank" class="whatsapp">📲 <span class="es">WhatsApp</span><span class="en">WhatsApp</span></a>
+      </div>
+    </header>
+   <!-- NAVBAR -->
+  <nav class="nav-bar">
+    <a class="cta-button" href="index_Cotizador.html" target="_blank" data-en="QUOTE" data-es="HACER COTIZACIÓN">HACER COTIZACIÓN</a>
+    <button id="menu-toggle">☰</button>
+    
+  
+  </nav>
+  
+  
+     
+  <nav class="nav-bar">
+   <a href="#intro">
+    Inicio
+   </a>
+   <a href="#proposito">
+    Propósito
+   </a>
+   <a href="#flujo">
+    Flujo
+   </a>
+   <a href="#componentes">
+    ¿Qué hacemos?
+   </a>
+   <a href="#tecnologia">
+    ¿Qué necesitamos?
+   </a>
+   <a href="#modelo">
+    Monetización
+   </a>
+   <a href="#planes">
+    Planes
+   </a>
+   <a href="#impacto">
+    Impacto
+   </a>
+   <a href="#alianzas">
+    Alianzas
+   </a>
+   <a href="#contacto">
+    Contacto
+   </a>
+   
+  </nav>
+  <header class="hero" id="intro" style="background-color: #f8c300;">
+   
+   
+
+   <h1>
+    NÚCLEO COLECTIVO
+     
+   </h1>
+   <p>
+    Inteligencia colectiva para transformar el mundo desde el arte y la tecnología.
+   </p>
+   <p class="autor">
+    Manuel Palacio | Medellín | 2025
+   </p>
+   <img alt="Logo Núcleo Colectivo" src="img/logo.png"/>
+   
+   
+   
+  </header>
+  <section class="section" id="proposito">
+   <h2 data-en="PROJECT PURPOSE" data-es="PROPÓSITO DEL PROYECTO">
+    PROPÓSITO DEL PROYECTO
+   </h2>
+   <p data-en="Núcleo Colectivo is a creative, cultural, and technological lab that brings together art, artificial intelligence, and community as engines of social transformation." data-es="Núcleo Colectivo es un laboratorio creativo, cultural y tecnológico que articula el arte, la inteligencia artificial y la comunidad como motores de transformación social.">
+    Núcleo Colectivo es un laboratorio creativo, cultural y tecnológico que articula el arte, la inteligencia artificial y la comunidad como motores de transformación social.
+   </p>
+   <ul>
+    <li data-en="Training in AI + creativity" data-es="Formación en IA + creatividad">
+     Formación en IA + creatividad
+    </li>
+    <li data-en="Accessible digital tools" data-es="Herramientas digitales accesibles">
+     Herramientas digitales accesibles
+    </li>
+    <li data-en="Platforms to showcase artistic and community processes" data-es="Plataformas para visibilizar procesos artísticos y comunitarios">
+     Plataformas para visibilizar procesos artísticos y comunitarios
+    </li>
+    
+    <li data-en="Platforms to showcase artistic and community processes" data-es="Plataformas para visibilizar procesos artísticos y comunitarios">
+     Desarrollo de proyectos, productos y servicios 
+    </li>
+    
+    
+    
+    
+    
+    
+    
+   </ul>
+  </section>
+  <section class="section" id="flujo">
+   <h2 data-en="PROJECT FLOW DIAGRAM" data-es="DIAGRAMA DE FLUJO DEL PROYECTO">
+    DIAGRAMA DE FLUJO DEL PROYECTO
+   </h2>
+   <p data-en="Narrative flow from purpose to impact." data-es="Flujo narrativo desde el propósito hasta el impacto.">
+    Flujo narrativo desde el propósito hasta el impacto.
+   </p>
+      
+    <img alt="Diagrama de Flujo del Proyecto" src="img/diagram.png"/>
+   <img alt="Ecosistema de Alianzas" src="img/Prototipo.png"/>
+   
+  
+  
+  
+   
+    <!-- NAVBAR -->
+  <nav class="nav-bar">
+    <a class="cta-button" href="COTIZACIONES/index_Cotizador.html" target="_blank" data-en="QUOTE" data-es="HACER COTIZACIÓN">HACER COTIZACIÓN</a>
+    
+  </nav>
+
+   
+   
+  
+  </section>
+  <section class="section" id="componentes">
+   <h2 data-en="WHAT DO WE DO?" data-es="¿QUÉ HACEMOS?">
+    ¿QUÉ HACEMOS?
+   </h2>
+   <ul>
+    <li data-en="🌐 Web platforms, portfolios + AI products and services" data-es="🌐 Plataformas web, portafolios + Poductos y sercicios con IA">
+     🌐 Plataformas web, portafolios + Poductos y sercicios con IA
+    </li>
+    <li data-en="🤖 NúcleoBot Chatbot – smart cultural guide" data-es="🤖 Chatbot NúcleoBot – guía cultural inteligente">
+     🤖 Chatbot NúcleoBot – guía cultural inteligente
+    </li>
+    <li data-en="🎓 Hybrid workshops in creative AI and inclusive art" data-es="🎓 Talleres híbridos en IA creativa y arte inclusivo">
+     🎓 Talleres híbridos en IA creativa y arte inclusivo
+    </li>
+    <li data-en="🌍 Collaborative network with artists, NGOs, universities, and general public" data-es="🌍 Red colaborativa con artistas, ONGs, universidades y público general">
+     🌍 Red colaborativa con artistas, ONGs, universidades y público general
+    </li>
+    <li data-en="🎨 Artistic projects: design, creation, and execution" data-es="🎨 Proyectos artistísticos: diseño creación y ejecución">
+     🎨 Proyectos artistísticos: diseño creación y ejecución
+    </li>
+    <li data-en="🎙️ Transmedia products: storytelling, illustration, audio, merch, applied AI" data-es="🎙️ Productos transmedia: narrativa, ilustración, audio, merch, IA aplicada">
+     🎙️ Productos transmedia: narrativa, ilustración, audio, merch, IA aplicada
+    </li>
+   </ul>
+   <img alt="Componentes" src="img/proposito.png"/>
+  </section>
+  
+  
+  
+  
+  <section class="section" id="tecnologia">
+   <h2 data-en="WHAT DO WE NEED? TECHNOLOGY THAT EMPOWERS US" data-es="¿QUÉ NECESITAMOS? TECNOLOGÍA QUE NOS POTENCIE">
+    ¿QUÉ NECESITAMOS? = ¡TECNOLOGÍA QUE NOS POTENCIE!
+    
+    </h2>
+   <ul>
+    <li data-en="🌐 Web platforms + AI products and services" data-es="🌐 Web Platforms + Poducts y whit IA sercice">
+     🌐 Plataformas web + Poductos y sercicios con IA
+    </li>
+  <li>
+     🖼️  Adobe Creative Cloud
+    <li>
+     🎨 Canva Pro
+    </li>
+    <li>
+     🗣️ ElevenLabs
+    </li>
+    <li>
+     🧠 ChatGPT Plus
+    </li>
+    <li>
+     🤖 Landbot (chatbots sin código)
+    </li>
+    <li>
+     🎬 CapCut + Descript
+    </li>
+    <li>
+     📡 Hosting y dominio: Una plataforma adecuada para alojar el proyecto.
+    </li>  
+     <li data-en="🌐 Web platforms + AI products and services" data-es="🌐 Plataformas web + Poductos y sercicios con IA">
+     🌐 Plataformas web + Poductos y sercicios con IA
+    </li>
+    
+    
+   
+   
+   
+   
+   <p data-en="Allies cover part of the tech stack, reducing costs and accelerating development." data-es="Aliados cubren parte del stack tecnológico, lo que reduce costos y acelera el desarrollo."> Los aliados cubren parte del stack tecnológico, lo que reduce costos y acelera el desarrollo.
+   </p>
+  </section>
+  <section class="section" id="modelo">
+   <h2 data-en="HOW DO WE SUSTAIN OURSELVES?" data-es="¿CÓMO NOS SOSTENEMOS?">
+    ¿CÓMO NOS SOSTENEMOS?
+   </h2>
+   <ul>
+    <li data-en="🎓 Workshops $150k - $300k COP" data-es="🎓 Talleres $150k - $300k COP">
+     🎓 Talleres $150k - $300k COP x sessión de 3 horas
+    </li>
+    <li data-en="🎨 Creative services from $400k COP" data-es="🎨 Servicios creativos desde $400k COP">
+     🎨 Servicios creativos desde $400k COP
+    </li>
+    <li data-en="🛍️ Digital products $15k - $150k COP" data-es="🛍️ Productos digitales $15k - $150k COP">
+     🛍️ Productos digitales $15k - $150k COP
+    </li>
+    <li data-en="🤖 Sector-specific chatbots from $450k COP" data-es="🤖 Chatbots por sector desde $450k COP">
+     🤖 Chatbots por sector desde $450k COP
+    </li>
+    <li data-en="🌎 Educational/cultural funding and alliances" data-es="🌎 Fondos y alianzas educativas/culturales">
+     🌎 Fondos y alianzas educativas/culturales
+    </li>
+   </ul>
+   <img alt="Tabla Monetización" src="img/tabla-monetizacion.png"/>
+  </section>
+  <section class="section" id="planes">
+   <h2 data-en="PLANS FOR ENTREPRENEURS" data-es="PLANES PARA EMPRENDIMIENTOS">
+    PLANES PARA EMPRENDIMIENTOS
+   </h2>
+   <ul>
+    <li data-en="🔹 Low Cost – $450k COP → Basic website + guide chatbot" data-es="🔹 Low Cost – $450k COP → Web básica + chatbot guía">
+     🔹 Low Cost – $450k COP → Web básica + chatbot guía
+    </li>
+    <li data-en="🔹 Star – $1.2M COP → Medium website + chatbot + forms" data-es="🔹 Star – $1.2M COP → Web media + chatbot + formularios">
+     🔹 Star – $1.2M COP → Web media + chatbot + formularios
+    </li>
+    <li data-en="🔹 Premium – $2.5M COP → Advanced website + chatbot + database" data-es="🔹 Premium – $2.5M COP → Web avanzada + chatbot + base de datos">
+     🔹 Premium – $2.5M COP → Web avanzada + chatbot + base de datos
+    </li>
+   </ul>
+  </section>
+  <section class="section" id="impacto">
+   <h2 data-en="RETURN + IMPACT" data-es="RETORNO + IMPACTO">
+    RETORNO + IMPACTO
+   </h2>
+   <ul>
+    <li data-en="Investment (6 months): $31.1M COP" data-es="Inversión (6 meses): $31.1M COP">
+     Inversión (6 meses): $31.1M COP
+    </li>
+    <li data-en="Estimated revenue: $42.4M COP" data-es="Ingresos estimados: $42.4M COP">
+     Ingresos estimados: $42.4M COP
+    </li>
+    <li data-en="ROI: +36.33%" data-es="ROI: +36.33%">
+     ROI: +36.33%
+    </li>
+    <li data-en=" We project our workshop will reach 100+ trained people  " data-es="100+ personas capacitadas">
+     100+ personas capacitadas en talleres
+    </li>
+    <li data-en="Scalability in health, education, culture, and tourism" data-es="Escalabilidad en salud, educación, cultura y turismo">
+     Escalabilidad en salud, educación, cultura y turismo
+    </li>
+   </ul>
+   <img alt="ROI Estimado" src="img/ROI estimado.png"/>
+   
+  </section>
+  <section class="section" id="alianzas">
+   <h2 data-en="🌍 ALLIANCE ECOSYSTEM" data-es="ECOSISTEMA DE ALIANZAS">
+    🌍 ECOSISTEMA DE ALIANZAS
+   </h2>
+   <p data-en="We connect with:" data-es="Conectamos con:">
+    Conectamos con:
+   </p>
+   <ul>
+    <li data-en="🏫 Universities" data-es="🏫 Universidades">
+     🏫 Universidades
+    </li>
+    <li data-en="🌐 NGOs" data-es="🌐 ONGs">
+     🌐 ONGs
+    </li>
+    <li data-en="🏢 Companies" data-es="🏢 Empresas">
+     🏢 Empresas
+    </li>
+    <li data-en="🌍 International allies" data-es="🌍 Aliados internacionales">
+     🌍 Aliados internacionales
+    </li>
+    <li data-en="🎭 Artists and communities" data-es="🎭 Artistas y comunidades">
+     🎭 Artistas y comunidades
+    </li>
+   </ul>
+   <img alt="Ecosistema de Alianzas" src="img/Prototipo.png"/>
+   <img alt="Ecosistema de Alianzas" src="img/InvitaCreativa.png"/>
+   
+  </section>
+  <section class="section" id="contacto">
+   <h2 data-en="INVITATION TO INVEST AND COLLABORATE" data-es="INVITACIÓN A INVERTIR Y COLABORAR">
+    INVITACIÓN A INVERTIR Y COLABORAR
+   </h2>
+   <p data-en="Do you want to transform communities with creative AI?" data-es="¿Quieres transformar comunidades con IA creativa?">
+    ¿Quieres transformar comunidades con IA creativa?
+   </p>
+   <p data-en="Join as a partner, sponsor, or investor. Support purpose-driven technology." data-es="Súmate como aliado, patrocinador o inversionista. Apoya la tecnología con propósito.">
+    Súmate como aliado, patrocinador o inversionista. Apoya la tecnología con propósito.
+   </p>
+   <p>
+    📧
+    <a href="mailto:nucleo.colectivo.art@gmail.com">
+     nucleo.colectivo.art@gmail.com
+    </a>
+   </p>
+   <p>
+    📞 +57 300 610 1221
+   </p>
+   <p>
+    📸
+    <a href="https://instagram.com/nucleocolectivo" target="_blank">
+     @nucleocolectivo
+    </a>
+   </p>
+   <p data-en="Thank you very much!" data-es="¡Muchas gracias!">
+    ¡Muchas gracias!
+   </p>
+  </section>
+  <section class="section" id="manu">
+   <h2 data-en="MANUEL PALACIO – CREATOR" data-es="MANUEL PALACIO – CREADOR">
+    MANUEL PALACIO – CREADOR
+   </h2>
+   <p data-en="Interdisciplinary artist, AI developer, and cultural manager. Design, prototyping, training, and mentoring." data-es="Artista interdisciplinar, desarrollador IA y gestor cultural. Diseño, prototipado, formación y acompañamiento.">
+    Artista interdisciplinar, desarrollador IA y gestor cultural. Diseño, prototipado, formación y acompañamiento.
+   </p>
+   <p data-en="Fees per module include conceptualization, design, testing, and art direction." data-es="Honorarios por módulo Incluye conceptualización, diseño, pruebas y dirección de arte.">
+    Honorarios por módulo Incluye conceptualización, diseño, pruebas y dirección de arte.
+   </p>
+  </section>
+  
+  
+  
+  
+  
+  <footer class="section">
+   <p data-en="© Núcleo Colectivo 2025 – Medellín – AI + Art + Community" data-es="© Núcleo Colectivo 2025 – Medellín – IA + Arte + Comunidad">
+    © Núcleo Colectivo 2025 – Medellín – IA + Arte + Comunidad
+   </p>
+  </footer>
+  <script src="script.js">
+  </script>
+  <script>
+   
+   
+   
+   
+   // Cambio de idioma
+let currentLang = 'es';
+
+document.getElementById('lang-toggle').addEventListener('click', () => {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  document.getElementById('lang-toggle').textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+  document.querySelectorAll('[data-es]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+});
+  </script>
+  <script>
+   // Menú responsive
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu-items');
+
+toggle.addEventListener('click', () => {
+  const isOpen = menu.classList.toggle('show');
+  toggle.textContent = isOpen ? '✖' : '☰';
+});
+
+// Cambio de idioma
+let currentLang = 'es';
+
+const langToggle = document.getElementById('lang-toggle');
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'es' ? 'en' : 'es';
+  langToggle.textContent = currentLang === 'es' ? 'EN' : 'ES';
+
+  document.querySelectorAll('[data-es]').forEach(el => {
+    el.textContent = el.getAttribute(`data-${currentLang}`);
+  });
+});
+ 
+
+
+<!-- PIE DE PÁGINA MORADO -->
+    <footer>
+      <p>© 2025 Núcleo Colectivo – Medellín, Colombia</p>
+      <div>
+        <a href="https://www.instagram.com/nucleo_colectivo_art/" target="_blank">📸 Instagram</a>
+        <a href="mailto:nucleo.colectivo.art@gmail.com">✉️ nucleo.colectivo.art@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- html2pdf.js para generar PDF tamaño carta -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
