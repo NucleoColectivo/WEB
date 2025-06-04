@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Industrial Ferrominero SAS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero parallax">
+    <div class="overlay">
+      <img src="logo-ferrominero.png" class="logo" alt="Ferrominero">
+      <h1 class="fade-in">Tecnología limpia para minería sin mercurio</h1>
+      <p class="fade-in delay">Equipos, asesorías y laboratorio técnico</p>
+      <a href="#servicios" class="btn scroll fade-in delay2">Conocer más</a>
+    </div>
+  </header>
+
+  <section class="quienes fade-in" id="quienes">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos una empresa colombiana especializada en ofrecer soluciones limpias para la pequeña y mediana minería. Nos enfocamos en tecnologías libres de mercurio, promoviendo prácticas responsables y sostenibles.</p>
+  </section>
+
+  <section class="servicios fade-in" id="servicios">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card slide-up">
+        <img src="icono-lab.png" alt="Lab">
+        <h3>Laboratorio Técnico</h3>
+        <p>Análisis de muestras minerales con técnicas confiables y sin mercurio.</p>
+      </div>
+      <div class="card slide-up delay">
+        <img src="icono-lab.png" alt="Equipo">
+        <h3>Equipos Sostenibles</h3>
+        <p>Mesas, trituradoras y JIGs diseñados para recuperar oro sin contaminar.</p>
+      </div>
+      <div class="card slide-up delay2">
+        <img src="icono-lab.png" alt="Asesoría">
+        <h3>Asesoría Técnica</h3>
+        <p>Acompañamiento integral en campo, implementación de plantas y capacitación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta fade-in">
+    <h2>Agenda tu cotización</h2>
+    <a class="btn big" href="https://wa.me/573137975967" target="_blank">📲 Escribir por WhatsApp</a>
+  <button class="btn green" onclick="abrirModal()">Cotización</button>
+</section>
+
+  <footer>
+    <p>© 2024 Industrial Ferrominero SAS</p>
+    <p>Contacto: ventas@ferrominero.com</p>
+  </footer>
+
+  <script>
+    // animaciones
+    const faders = document.querySelectorAll('.fade-in, .slide-up');
+    const appearOptions = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(f => appearOnScroll.observe(f));
+  </script>
+
+<!-- Modal Cotizador -->
+<div id="modalCotizador" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="cerrarModal()">&times;</span>
+    <iframe src="cotizador.html" frameborder="0"></iframe>
+  </div>
+</div>
+<script>
+  function abrirModal() {
+    document.getElementById("modalCotizador").style.display = "block";
+  }
+  function cerrarModal() {
+    document.getElementById("modalCotizador").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

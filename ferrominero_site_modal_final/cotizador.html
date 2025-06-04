@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cotizador Ferrominero</title>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0; padding: 1rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h2 { text-align: center; margin-bottom: 1rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+    .total {
+      text-align: right;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>🛠️ Cotizador Ferrominero</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio (COP)</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody id="cotizador-body">
+      <tr>
+        <td>Mesa Concentradora Oro</td>
+        <td>3.800.000</td>
+        <td><input type="number" value="0" min="0" onchange="actualizarTotal()"></td>
+        <td class="subtotal">0</td>
+      </tr>
+      <tr>
+        <td>JIG de concentración</td>
+        <td>4.290.000</td>
+        <td><input type="number" value="0" min="0" onchange="actualizarTotal()"></td>
+        <td class="subtotal">0</td>
+      </tr>
+      <tr>
+        <td>Asesoría Técnica</td>
+        <td>240.000</td>
+        <td><input type="number" value="0" min="0" onchange="actualizarTotal()"></td>
+        <td class="subtotal">0</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="total">Total: <span id="total-cop">0</span> COP</p>
+
+  <script>
+    function actualizarTotal() {
+      let total = 0;
+      const precios = [3800000, 4290000, 240000];
+      const filas = document.querySelectorAll("#cotizador-body tr");
+      filas.forEach((fila, i) => {
+        const cantidad = parseInt(fila.querySelector("input").value);
+        const subtotal = cantidad * precios[i];
+        fila.querySelector(".subtotal").textContent = subtotal.toLocaleString();
+        total += subtotal;
+      });
+      document.getElementById("total-cop").textContent = total.toLocaleString();
+    }
+  </script>
+</body>
+</html>
