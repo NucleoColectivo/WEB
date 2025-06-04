@@ -23,7 +23,7 @@ body {
 /* HEADER BAR (ENCABEZADO MORADO) */
 /* ------------------------------ */
 .header-bar {
-  background: #310e6f;
+  background: #333;
   color: white;
   padding: 1rem 1.5rem;
   text-align: center;
@@ -119,7 +119,7 @@ table {
 }
 
 thead {
-  background: #4c0299;
+  background: #585858;
   color: white;
 }
 
