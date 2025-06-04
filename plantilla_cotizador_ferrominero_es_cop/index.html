@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cotizador Ferrominero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="banner">
+    <img src="Recurso_2.png" alt="Logo Ferrominero" class="logo"/>
+    <h1 class="brand-title">Industrial Ferrominero SAS</h1>
+    <p class="slogan">Tecnologías limpias para la minería sin mercurio</p>
+  </header>
+  <main class="container">
+    <section class="products">
+      <h2>Selecciona productos o servicios</h2>
+      <div id="product-list"></div>
+    </section>
+    <section class="total">
+      <p>Total COP: <strong><span id="total-cop">0</span></strong></p>
+      <div class="actions">
+        <button onclick="sendWhatsApp()" class="btn">📲 Cotizar por WhatsApp</button>
+        <button onclick="window.print()" class="btn secondary">🖨️ Imprimir Cotización</button>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>Contacto: ventas@ferrominero.com | +57 313 797 5967</p>
+    <img src="Recurso_6.png" alt="Íconos contacto" class="iconos"/>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
