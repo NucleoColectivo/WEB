@@ -44,6 +44,81 @@
 
     <!-- CONTENIDO (TABLAS, COTIZACIÓN) -->
     <main id="contenido">
+      
+      
+      
+      <!-- PAQUETES COMPETITIVOS -->
+      <section class="familia">
+        <h2>📦 <span class="en">Service Packages</span><span class="es">Paquetes Completos</span></h2>
+        <table id="packages"> 
+          <thead>
+            <tr>
+              <th><span class="es">Seleccionar</span><span class="en">Select</span></th>
+              <th>🏷️ <span class="es">Paquete</span><span class="en">Package</span></th>
+              <th>📋 <span class="es">Descripción</span><span class="en">Description</span></th>
+              <th>💰 COP</th>
+              <th>💵 USD</th>
+              <th><span class="es">Cantidad</span><span class="en">Qty</span></th>
+              <th><span class="es">Subtotal</span><span class="en">Subtotal</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>⭐ <span class="es">Básico</span><span class="en">Basic</span></td>
+              <td>
+                <span class="es">
+                  Landing básica + 1 Imagen IA + Chatbot básico + Key Visual
+                </span>
+                <span class="en">
+                  Basic Landing + 1 AI Image + Basic Chatbot + Key Visual
+                </span>
+              </td>
+              <td><span class="precio" data-cop="1170000" data-usd="292.5">1,170,000</span></td>
+              <td>292.5</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>🚀 <span class="es">Medio</span><span class="en">Medium</span></td>
+              <td>
+                <span class="es">
+                  Landing personalizada + 3 Imágenes IA + Chatbot lógico + Arte integral + Formulario avanzado
+                </span>
+                <span class="en">
+                  Custom Landing + 3 AI Images + Logic Chatbot + Full Art Direction + Advanced Form
+                </span>
+              </td>
+              <td><span class="precio" data-cop="2460000" data-usd="615">2,460,000</span></td>
+              <td>615</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" onchange="calcularTotal()" /></td>
+              <td>👑 <span class="es">Premium</span><span class="en">Premium</span></td>
+              <td>
+                <span class="es">
+                  Landing optimizada + 5 Imágenes IA + Chatbot con conexión + Arte avanzado + SEO + Formulario avanzado
+                </span>
+                <span class="en">
+                  Optimized Landing + 5 AI Images + Connected Chatbot + Advanced Art + SEO + Advanced Form
+                </span>
+              </td>
+              <td><span class="precio" data-cop="1627500" data-usd="407">1,627,500</span></td>
+              <td>407</td>
+              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
+              <td class="subtotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      
+      
+      
+      
       <!-- SECCIÓN: SERVICIOS INDIVIDUALES -->
       <section id="individuales" class="familia">
         <h2>🧩 <span class="en">Individual Services</span><span class="es">Servicios Individuales</span></h2>
@@ -163,73 +238,7 @@
         </table>
       </section>
 
-      <!-- PAQUETES COMPETITIVOS -->
-      <section class="familia">
-        <h2>📦 <span class="en">Service Packages</span><span class="es">Paquetes Completos</span></h2>
-        <table id="packages"> 
-          <thead>
-            <tr>
-              <th><span class="es">Seleccionar</span><span class="en">Select</span></th>
-              <th>🏷️ <span class="es">Paquete</span><span class="en">Package</span></th>
-              <th>📋 <span class="es">Descripción</span><span class="en">Description</span></th>
-              <th>💰 COP</th>
-              <th>💵 USD</th>
-              <th><span class="es">Cantidad</span><span class="en">Qty</span></th>
-              <th><span class="es">Subtotal</span><span class="en">Subtotal</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><input type="checkbox" onchange="calcularTotal()" /></td>
-              <td>⭐ <span class="es">Básico</span><span class="en">Basic</span></td>
-              <td>
-                <span class="es">
-                  Landing básica + 1 Imagen IA + Chatbot básico + Key Visual
-                </span>
-                <span class="en">
-                  Basic Landing + 1 AI Image + Basic Chatbot + Key Visual
-                </span>
-              </td>
-              <td><span class="precio" data-cop="1170000" data-usd="292.5">1,170,000</span></td>
-              <td>292.5</td>
-              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
-              <td class="subtotal">0</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" onchange="calcularTotal()" /></td>
-              <td>🚀 <span class="es">Medio</span><span class="en">Medium</span></td>
-              <td>
-                <span class="es">
-                  Landing personalizada + 3 Imágenes IA + Chatbot lógico + Arte integral + Formulario avanzado
-                </span>
-                <span class="en">
-                  Custom Landing + 3 AI Images + Logic Chatbot + Full Art Direction + Advanced Form
-                </span>
-              </td>
-              <td><span class="precio" data-cop="2460000" data-usd="615">2,460,000</span></td>
-              <td>615</td>
-              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
-              <td class="subtotal">0</td>
-            </tr>
-            <tr>
-              <td><input type="checkbox" onchange="calcularTotal()" /></td>
-              <td>👑 <span class="es">Premium</span><span class="en">Premium</span></td>
-              <td>
-                <span class="es">
-                  Landing optimizada + 5 Imágenes IA + Chatbot con conexión + Arte avanzado + SEO + Formulario avanzado
-                </span>
-                <span class="en">
-                  Optimized Landing + 5 AI Images + Connected Chatbot + Advanced Art + SEO + Advanced Form
-                </span>
-              </td>
-              <td><span class="precio" data-cop="1627500" data-usd="407">1,627,500</span></td>
-              <td>407</td>
-              <td><input type="number" value="1" min="1" onchange="calcularTotal()" /></td>
-              <td class="subtotal">0</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      
 
       <!-- EXTRAS OPCIONALES -->
       <section class="familia">
